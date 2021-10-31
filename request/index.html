@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request File dengan AJAX</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/source-code.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 20px 20px 20px 20px;
+        }
+
+        input {
+            margin: 0 20px 20px 20px;
+            transition-duration: 0.4s;
+        }
+
+        button {
+            width: 100px;
+            margin: 20px 20px 0 20px;
+            transition-duration: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-info" onclick="window.location.href='../index.html'">Back</button>
+    
+    <h1>Mengambil data dari file HTML</h1>
+    
+    <center>
+        <form>
+            <input type="button" class="btn btn-primary" value="Tampilkan Kalimat" onclick="getdata('tampil.html', 'hasil')">
+        </form>
+        
+
+        <div id="hasil">
+            <span>Hasil request dengan AJAX akan ditampilkan di sini.</span>
+        </div>
+    </center>
+
+    <script>
+        var XMLHttpRequestObject = false;
+
+        if (window.XMLHttpRequest) {
+            XMLHttpRequestObject = new XMLHttpRequest();
+        }
+
+        else if (window.ActiveXObject) {
+            XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHttp");
+        }
+
+        function getdata(url, hasil) {
+            if (XMLHttpRequestObject) {
+                var obj = document.getElementById(hasil);
+                
+                XMLHttpRequestObject.open("GET", url);
+                XMLHttpRequestObject.onreadystatechange = function() {
+                    if (XMLHttpRequestObject.readyState == 1) {
+                        obj.innerHTML = "Loading";
+                    }
+
+                    if (XMLHttpRequestObject.readyState == 4) {
+                        if (XMLHttpRequestObject.status == 200) {
+                            obj.innerHTML = XMLHttpRequestObject.responseText;
+                        }
+
+                        else {
+                            obj.innerHTML = XMLHttpRequestObject.statusText;
+                        }
+                    }
+                }
+
+                XMLHttpRequestObject.send(null);
+            }
+        }
+    </script>
+</body>
+</html>

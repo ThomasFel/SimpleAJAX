@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/source-code.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Simple AJAX App</title>
+    <style>
+        body {
+            font-family: 'Poppins';
+            text-align: center;
+            justify-content: center;
+            background-image: url('mia.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        button {
+            margin-left: 10px;
+            margin-right: 10px;
+            transition-duration: 0.4s;
+        }
+
+        .container {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+
+            -webkit-animation: fadein 1.5s;
+            -moz-animation: fadein 1.5s;
+            animation: fadein 1.5s;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple AJAX App</h1>
+        
+        <center>
+            <button class="btn btn-info" onclick="window.location.href='./request/index.html'">Request Data</button>
+            <button class="btn btn-info" onclick="window.location.href='./filter_daerah/index.php'">Filter Daerah</button>
+        </center>
+    </div>
+</body>
+</html>
