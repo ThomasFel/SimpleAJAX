@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <button class="btn btn-info" onclick="window.location.href='../index.html'">Back</button>
+    <button class="btn btn-info" onclick="window.location.href='../'">Back</button>
 
     <div class="container mb-5">
         <h2 align="center" style="margin: 30px 10px 10px 10px;">Pilih Daerah</h2> <hr />
