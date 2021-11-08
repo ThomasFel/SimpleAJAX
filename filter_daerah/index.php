@@ -63,8 +63,8 @@
                 type: 'POST',
                 url: "get_provinsi.php",
                 cache: false, 
-                success: function(msg){
-                $("#provinsi").html(msg);
+                success: function(msg) {
+                    $("#provinsi").html(msg);
                 }
             });
     
@@ -75,8 +75,8 @@
                     url: "get_kabupaten.php",
                     data: {provinsi: provinsi},
                     cache: false,
-                    success: function(msg){
-                    $("#kabupaten").html(msg);
+                    success: function(msg) {
+                        $("#kabupaten").html(msg);
                     }
                 });
             });
@@ -88,8 +88,8 @@
                     url: "get_kecamatan.php",
                     data: {kabupaten: kabupaten},
                     cache: false,
-                    success: function(msg){
-                    $("#kecamatan").html(msg);
+                    success: function(msg) {
+                        $("#kecamatan").html(msg);
                     }
                 });
             });
@@ -101,8 +101,8 @@
                     url: "get_kelurahan.php",
                     data: {kecamatan: kecamatan},
                     cache: false,
-                    success: function(msg){
-                    $("#kelurahan").html(msg);
+                    success: function(msg) {
+                        $("#kelurahan").html(msg);
                     }
                 });
             });
